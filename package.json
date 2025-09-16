@@ -1,0 +1,20 @@
+{
+    "name": "mts10-agent-assist",
+    "version": "1.0.0",
+    "description": "Multi-Channel Agent Assist Platform",
+    "main": "index.js",
+    "scripts": {
+      "start": "concurrently \"npm run frontend\" \"npm run backend\"",
+      "frontend": "npx http-server frontend -p 8080 -o",
+      "backend": "cd backend && npm start",
+      "dev": "concurrently \"npm run frontend\" \"npm run backend:dev\"",
+      "backend:dev": "cd backend && npm run dev",
+      "install-all": "npm install && cd backend && npm install"
+    },
+    "devDependencies": {
+      "concurrently": "^8.2.2"
+    },
+    "dependencies": {
+      "http-server": "^14.1.1"
+    }
+  }
